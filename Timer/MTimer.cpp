@@ -3,7 +3,6 @@
 void Timer::Init()
 {
 	globalGameTimer = milliseconds(0);
-	//totalFrameTime = milliseconds(0);
 	frameTime = milliseconds(0);
 	frameCount = 0;
 	beforeTime = high_resolution_clock::now();
@@ -16,11 +15,7 @@ void Timer::Frame()
 
 	globalGameTimer += frameTime;
 	beforeTime = CurrentTime;	// 시간연동계산이 끝낫으므로 CurrTime이 현재시간이되고 그다음 들어오는 프레임계산을 해야함.
-	//totalFrameTime += frameTime;
 
-	//if (totalFrameTime >= seconds(1)){
-	//	totalFrameTime -= milliseconds(1000);
-	//}
 	frameCount = milliseconds(1000)/frameTime;
 }
 

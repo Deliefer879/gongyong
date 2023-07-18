@@ -11,7 +11,7 @@ int main()
 		std::this_thread::sleep_for(milliseconds(1));
 		timer.Frame();
 		//system("cls");
-		//timer.Render();
+		timer.Render();
 	}
 	timer.Release();
 }

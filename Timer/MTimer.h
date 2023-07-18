@@ -1,6 +1,5 @@
 #pragma once
 #include <iostream>
-#include <Windows.h>
 #include <chrono>
 
 using namespace std::chrono;
@@ -9,7 +8,6 @@ class Timer
 {
 private:
 	milliseconds globalGameTimer;
-	//milliseconds totalFrameTime;
 	milliseconds frameTime;
 	high_resolution_clock::time_point beforeTime;
 	int frameCount;
