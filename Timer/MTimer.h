@@ -8,7 +8,7 @@ class Timer
 {
 private:
 	milliseconds globalGameTimer;
-	milliseconds frameTime;
+	nanoseconds frameTime;
 	high_resolution_clock::time_point beforeTime;
 	int frameCount;
 
@@ -18,7 +18,7 @@ public:
 	void Render();	//실질적 화면 표시
 	void Release();// 소멸 ~class
 	inline int GetFPS();
-	inline milliseconds GetSecPerFrame() { return frameTime; };
+	inline nanoseconds GetSecPerFrame() { return frameTime; };
 	inline milliseconds GetGameTimer() { return globalGameTimer; };
 };
 
