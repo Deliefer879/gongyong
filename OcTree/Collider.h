@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Vector3.h"
+#include <iostream>
 
 class Collider
 {
@@ -27,21 +28,28 @@ public:
 	Vector3 Min() const { return min; }
 	Vector3 Max() const { return max; }
 	Vector3 Center() const { return center; }
-	void X(float x) { this->x = x; }
-	void Y(float y) { this->y = y; }
-	virtual void Z(float z) { this->z = z; }
-	void W(float w) { this->w = w; }
-	void H(float h) { this->h = h; }
-	virtual void D(float d) { this->d = d; }
+	void X(float x) { this->x = x; UpdatePoints(); }
+	void Y(float y) { this->y = y; UpdatePoints(); }
+	virtual void Z(float z) { this->z = z; UpdatePoints(); }
+	void W(float w) { this->w = w;  UpdatePoints(); }
+	void H(float h) { this->h = h;  UpdatePoints(); }
+	virtual void D(float d) { this->d = d;  UpdatePoints(); }
 	void Pos(const Vector3& pos) { this->pos = pos; UpdatePoints(); }
-	void Size(const Vector3& size) { this->size = size; }
-	void Min(const Vector3& min) { this->min = min; }
-	void Max(const Vector3& max) { this->max = max; }
-	void Center(const Vector3& center) { this->center = center; }
+	void Size(const Vector3& size) { this->size = size; UpdatePoints(); }
 	virtual void Set(Vector3 pos, Vector3 size) = 0;
 	
 	Collider() : x(0), y(0), z(0), w(0), h(0), d(0), min({ 0,0,0 }), max({ 0,0,0 }), center({0,0,0}) {};
 	virtual ~Collider() {};
+
+	virtual bool Collision(Collider* const collider) = 0;
+
+	// for print
+	void PrintInfo() { std::cout << "x: " << x << ", y: " << y << ", z: " << z << ", w: " << w << ", h: " << h << ", d: " << d << std::endl; }
+
+protected:
+	void Min(const Vector3& min) { this->min = min; }
+	void Max(const Vector3& max) { this->max = max; }
+	void Center(const Vector3& center) { this->center = center; }
 };
 
 class Rect : public Collider
@@ -62,6 +70,8 @@ public:
 	void Set(float x, float y, float w, float h);
 	virtual void Set(Vector3 pos, Vector3 size) override;
 	void Set(const Rect& rect);
+
+	virtual bool Collision(Collider* const collider);
 
 	Rect operator+(const Rect& other) const;
 	Rect operator-(const Rect& other) const;
@@ -87,6 +97,8 @@ public:
 	void Set(float x, float y, float z, float w, float h, float d);
 	virtual void Set(Vector3 pos, Vector3 size) override;
 	void Set(const Cube& cube);
+
+	virtual bool Collision(Collider* const collider);
 
 	Cube operator+(const Cube& other) const;
 	Cube operator-(const Cube& other) const;

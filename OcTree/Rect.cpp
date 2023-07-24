@@ -43,14 +43,27 @@ void Rect::Set(const Rect& rect)
 	UpdatePoints();
 }
 
+bool Rect::Collision(Collider* const collider)
+{
+	Rect* rect2 = dynamic_cast<Rect*>(collider);
+
+	Rect uCube = *this + *rect2;
+
+	if (uCube.W() <= (W() + (*rect2).W()) &&
+		uCube.H() <= (H() + (*rect2).H()))
+		return true;
+
+	return false;
+}
+
 Rect Rect::operator+(const Rect& other) const
 {
 	Rect unionRect;
 
 	float x = Min().X() < other.Min().X() ? Min().X() : other.Min().X();
 	float y = Min().Y() < other.Min().Y() ? Min().Y() : other.Min().Y();
-	float w = Max().X() > other.Max().X() ? Max().X() : other.Max().X();
-	float h = Max().Y() > other.Max().Y() ? Max().Y() : other.Max().Y();
+	float w = Max().X() > other.Max().X() ? Max().X() : other.Max().X(); w = w - x;
+	float h = Max().Y() > other.Max().Y() ? Max().Y() : other.Max().Y(); h = h - y;
 
 	unionRect.Set(x, y, w, h);
 
@@ -65,20 +78,17 @@ Rect Rect::operator-(const Rect& other) const
 
 Rect Rect::operator*(float scalar) const
 {
-	return Rect({Pos() * scalar, Size() * scalar});
+	return Rect({Pos(), Size() * scalar});
 }
 
 Rect Rect::operator/(float scalar) const
 {
-	return Rect({ Pos() / scalar, Size() / scalar });
+	return Rect({ Pos(), Size() / scalar });
 }
 
 Rect& Rect::operator*=(float scalar)
 {
-	X(X() * scalar);
-	Y(Y() * scalar);
-	W(W() * scalar);
-	H(H() * scalar);
+	this->Size() *= scalar;
 	UpdatePoints();
 
 	return *this;	
@@ -86,10 +96,7 @@ Rect& Rect::operator*=(float scalar)
 
 Rect& Rect::operator/=(float scalar)
 {
-	X(X() / scalar);
-	Y(Y() / scalar);
-	W(W() / scalar);
-	H(H() / scalar);
+	this->Size() /= scalar;
 	UpdatePoints();
 
 	return *this;

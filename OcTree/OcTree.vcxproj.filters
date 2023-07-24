@@ -39,6 +39,9 @@
     <ClInclude Include="Node.hpp">
       <Filter>SpaceDivision</Filter>
     </ClInclude>
+    <ClInclude Include="constant.h">
+      <Filter>Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Collision">

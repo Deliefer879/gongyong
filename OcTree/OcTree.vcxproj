@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Collider.h" />
+    <ClInclude Include="constant.h" />
     <ClInclude Include="Node.hpp" />
     <ClInclude Include="Object.hpp" />
     <ClInclude Include="SpaceDivider.hpp" />
