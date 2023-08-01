@@ -1,0 +1,30 @@
+@startuml a
+title Student Manager Search
+
+actor User
+activate StudentManager
+
+User -> StudentManager : Input
+
+loop until input is not negative
+    StudentManager -> StudentManager : request student id
+end
+
+StudentManager -> DoubleLinkedList : request to target student node
+activate DoubleLinkedList
+
+DoubleLinkedList -> Finder : find target student node
+activate Finder
+Finder -> DoubleLinkedList : return target student node
+deactivate Finder
+
+DoubleLinkedList -> StudentManager : return target student node
+deactivate DoubleLinkedList
+
+alt target student node is not exist
+    StudentManager -> StudentManager : print target student node is not exist
+else target student node is exist
+    StudentManager -> StudentManager : print target student node
+end
+
+@enduml

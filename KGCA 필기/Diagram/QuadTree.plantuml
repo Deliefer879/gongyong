@@ -1,0 +1,50 @@
+@startuml a
+
+class Vector2 <T>
+{
+    +T x
+    +T y
+
+    Vector2<T>& operator +=, /=, +, /
+}
+
+class QuadTree<T,GetBox,Equal>
+{
+    +add(T& value)
+    +remove(T& value)
+    +vector<T> query(Box<T> box)
+    +vector<std::pair<T, T>> findAllIntersections()
+    +Box<Float> getBox()
+
+    -long Threshold = 16
+    -long MaxDepth = 8
+
+    -Box<Float> mBox
+    -std::unique_ptr<Node> mRoot
+    -GetBox mGetBox
+    -Equal mEqual
+
+    -bool isLeaf(Node* node)
+    -Box<Float> getBox(Box<Float>& box, int i)
+    -int getQuadrant(Box<Float>& nodeBox, Box<Float>& valueBox)
+    -void add(Node* node, long depth, Box<Float>& box, T& value)
+    -void split(Node* )
+}
+
+class Box<T>
+{
+    +T left
+    +T top
+    +T width
+    +T height
+
+    T getRight()
+    T getBottom()
+    Vector2<T> getTopLeft()
+    Vector2<T> getCenter()
+    Vector2<T> getSize()
+    bool contains(Box<T> box)
+    bool intersects(Box<T> box)
+}
+
+@enduml

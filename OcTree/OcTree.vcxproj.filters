@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector3.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Rect.cpp">
+      <Filter>Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="Cube.cpp">
+      <Filter>Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionManager.hpp">
+      <Filter>Collision</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Timer.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Collider.h">
+      <Filter>Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.hpp">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="SpaceDivider.hpp">
+      <Filter>SpaceDivision</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.hpp">
+      <Filter>SpaceDivision</Filter>
+    </ClInclude>
+    <ClInclude Include="constant.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Collision">
+      <UniqueIdentifier>{82ff426d-a6f2-42c2-915f-03e99822d04f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{55f77f1f-64b8-460a-8888-79dea221b9af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{b418b28e-e5f3-42b1-8958-b5ae7ad3b553}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object">
+      <UniqueIdentifier>{e19e648f-3605-4a93-a2d1-e29938f4581f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SpaceDivision">
+      <UniqueIdentifier>{e3eef63c-1698-4f79-9c67-08e649b7e9e0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

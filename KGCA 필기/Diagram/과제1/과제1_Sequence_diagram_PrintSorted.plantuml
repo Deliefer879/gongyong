@@ -1,0 +1,40 @@
+@startuml a
+title Student Manager PrintSorted
+
+actor User
+activate StudentManager
+
+User -> StudentManager : input
+loop until input is valid
+    StudentManager -> StudentManager : validate input
+end
+
+note left of StudentManager : collect Sort key by user input
+
+StudentManager -> DoubleLinkedList : request sorted array
+activate DoubleLinkedList
+DoubleLinkedList -> Sorter : request sort array by key
+activate Sorter
+Sorter -> Sorter : sort by quick sort
+Sorter -> DoubleLinkedList : return sorted array
+deactivate Sorter
+
+DoubleLinkedList -> StudentManager : return sorted array
+deactivate DoubleLinkedList
+
+loop StudentData Arr Count
+    StudentManager -> StudentManager : print student data
+end
+
+StudentManager -> DoubleLinkedList : request sort array by id
+activate DoubleLinkedList
+DoubleLinkedList -> Sorter : request sort array by id
+activate Sorter
+Sorter -> Sorter : sort by quick sort
+Sorter -> DoubleLinkedList : return sorted array
+deactivate Sorter
+
+DoubleLinkedList -> StudentManager
+deactivate DoubleLinkedList
+
+@enduml

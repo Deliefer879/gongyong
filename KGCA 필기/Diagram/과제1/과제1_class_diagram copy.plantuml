@@ -1,0 +1,108 @@
+@startuml a
+class DoubleLinkedList<T>
+{
+    -head: LinkedListNode<T>*
+    -count: int
+    -sorter: Sorter<LinkedListNode<T>*>*
+    -finder: Finder<LinkedListNode<T>*>*
+
+    +DoubleLinkedList()
+    +~DoubleLinkedList()
+    +InsertFirst(T* data)
+    +InsertLast(T* data)
+    +DeleteFirst()
+    +DeleteLast()
+    +Delete(LinkedListNode<T>* target)
+    +GetCount() const int
+    +Sort(bool(*compare)(LinkedListNode<T>*, LinkedListNode<T>*))
+    +Find(int id, int (*compare)(LinkedListNode<T>*, int))
+    +GetSortedArr() LinkedListNode<T>** 
+}
+
+class LinkedListNode<T>
+{
+    -data: T*
+    -prev: LinkedListNode<T>*
+    -next: LinkedListNode<T>*
+
+    +LinkedListNode(T* data)
+}
+
+class Sorter<T>
+{
+    -Swap(int a, int b, T*& arr)
+    +QuickSort(int size, bool(*compare)(T, T), T t[])
+}
+
+class Finder<T>
+{
+    +binarySearch(T arr[], int n, int x, int (*compare)(T, int))
+}
+
+class StudentManager
+{
+    -list: DoubleLinkedList<StudentData>*
+    -fileManager: FileManager<StudentData>*
+
+    +StudentManager()
+    +~StudentManager()
+    +Run()
+    + enum class Menu
+    -AddStudent()
+    -DeleteStudent()
+    -SearchStudent()
+    -PrintStudent(StudentData* data)
+    -PrintStudentList()
+    -PrintSortedStudentList()
+    -SaveStudentList()
+    -LoadStudentList()
+}
+
+class FileManager<T>
+{
+    +Save(const char* fileName, int count, Iterator<T> iter)
+    +Load(const char* fileName, int& count)
+}
+
+class StudentData
+{
+    -name: string
+    -phone: string
+    -id: int
+    -age : int
+    -kor : int
+    -eng : int
+    -math : int
+    -avg : float
+
+    +StudentData()
+    +StudentData(int id, int age, int kor, int eng, int math, string name, string phone)
+    +StudentData(StudentData* data)
+    +~StudentData()
+}
+
+class Iterator<T>
+{
+    -m_node: LinkedListNode<T>*
+
+    +Iterator(LinkedListNode<T>* m_node)
+    +operator++(int)
+    +operator++()
+    +operator--(int)
+    +operator--()
+    +operator*()
+    +operator[](int index)
+    +operator!=(const Iterator<T>& rhs)
+    +operator!=(const Iterator<T>& []hint indexs)
+    +operator==(const Iterator<T>& rhs)
+}
+
+LinkedListNode --* DoubleLinkedList
+Sorter --* DoubleLinkedList
+Finder --* DoubleLinkedList
+Iterator --* DoubleLinkedList
+
+DoubleLinkedList --* StudentManager
+FileManager --* StudentManager
+
+@enduml
