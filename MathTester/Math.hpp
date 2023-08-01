@@ -64,7 +64,7 @@ public:
 	inline void SetY(float _y) { y=_y; };
 	inline void SetZ(float _z) { z=_z; };
 	inline void SetV(float _vector[]) {
-		if (!(sizeof(*vector) / 3) == sizeof(float))_ASSERT("NOT CORRECT VECTOR ARRAY");
+		_ASSERT((sizeof(*vector) / 3) == sizeof(float));
 		x = _vector[0];
 		y = _vector[1];
 		z = _vector[2];
