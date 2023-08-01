@@ -1,0 +1,44 @@
+@startuml a
+title Student Manager Delete
+
+actor User
+activate StudentManager
+
+User -> StudentManager : Input
+
+loop until input is not negative
+    StudentManager -> StudentManager : request student id
+end
+
+StudentManager -> DoubleLinkedList : request to target student node
+activate DoubleLinkedList
+
+DoubleLinkedList -> Finder : find target student node
+activate Finder
+Finder -> DoubleLinkedList : return target student node
+deactivate Finder
+
+DoubleLinkedList -> StudentManager : return target student node
+deactivate DoubleLinkedList
+
+alt target student node is not null
+    StudentManager -> DoubleLinkedList : request to delete target student node
+    activate DoubleLinkedList
+    DoubleLinkedList -> StudentManager
+    deactivate DoubleLinkedList
+    StudentManager -> DoubleLinkedList : request to sort by id
+    activate DoubleLinkedList
+    DoubleLinkedList -> Sorter : sort by id
+    activate Sorter
+    Sorter -> DoubleLinkedList : return sorted list
+    deactivate Sorter
+    DoubleLinkedList -> StudentManager
+    deactivate DoubleLinkedList
+
+else target student node is null
+    StudentManager -> User : print error message
+end
+
+
+
+@enduml

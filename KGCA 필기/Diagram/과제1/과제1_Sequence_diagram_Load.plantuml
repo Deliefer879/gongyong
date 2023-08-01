@@ -1,0 +1,30 @@
+@startuml a
+title Student Manager Load
+
+actor User
+activate StudentManager
+
+User -> StudentManager : Input
+
+StudentManager -> FileManager : Load
+activate FileManager
+FileManager -> FileManager : Read File
+alt File Exist
+    FileManager -> StudentManager : Return Student List Data 
+    note right of FileManager
+        Load File by binary format
+        and store in char array
+    end note
+    deactivate FileManager
+
+    StudentManager -> StudentManager : Convert char array to StudentData Arr
+    loop StudentData Arr Size
+        StudentManager -> StudentManager : Add Student to Student List
+    end
+    StudentManager -> StudentManager : delete Loaded StudentData Arr
+else File Not Exist
+    FileManager -> StudentManager : Return Null
+    deactivate FileManager
+end
+
+@enduml

@@ -1,0 +1,30 @@
+@startuml a
+title Student Manager Add
+
+actor User
+activate StudentManager
+
+User -> StudentManager : Input
+
+loop until input is valid
+    StudentManager -> StudentManager :  user input
+end
+
+StudentManager -> DoubleLinkedList : 학생 정보 전달
+activate DoubleLinkedList
+
+note right of DoubleLinkedList : Create StudentData Node and Insert 
+DoubleLinkedList -> StudentManager : 저장 완료
+deactivate DoubleLinkedList
+
+StudentManager -> DoubleLinkedList : request to sort by id
+activate DoubleLinkedList
+DoubleLinkedList -> Sorter : sort by id
+activate Sorter
+Sorter -> DoubleLinkedList : sorted list
+deactivate Sorter
+
+DoubleLinkedList -> StudentManager
+deactivate DoubleLinkedList
+
+@enduml

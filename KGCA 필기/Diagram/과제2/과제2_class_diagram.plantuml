@@ -1,0 +1,50 @@
+@startuml a
+
+class Node
+{
+
+}
+
+class OcTree
+{
+
+}
+
+abstract class Object
+{
+
+}
+
+class DynamicObject
+{
+
+}
+
+class StaticObject
+{
+
+}
+
+class Timer
+{
+
+}
+
+class Vector3
+{
+
+}
+
+class AreaSize
+{
+
+}
+
+class Cube
+{
+
+}
+
+
+
+@enduml

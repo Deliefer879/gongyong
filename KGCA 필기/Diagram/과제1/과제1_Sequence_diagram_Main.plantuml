@@ -1,0 +1,73 @@
+@startuml a
+title Student Manager Sequence Diagram
+
+actor User
+
+note left of Main
+ Create StudentManager
+end note
+
+skinparam SequenceMessageAlignment center
+Main -> StudentManager : Run()
+note right of StudentManager
+    Create DoubleLinkedList, FileManager
+end note
+
+activate StudentManager
+User -> StudentManager : Input
+
+alt Add Input
+StudentManager -> Add : Add Student
+activate Add
+Add -> StudentManager : Add Student Complate
+deactivate Add
+
+else Delete Input
+StudentManager -> Delete : Delete Student
+activate Delete
+Delete -> StudentManager : Delete Student Complate
+deactivate Delete
+
+else Search Input
+StudentManager -> Search : Search Student
+activate Search
+Search -> StudentManager : Get Search Result
+deactivate Search
+
+else Print Input
+StudentManager -> Print : Request Iter
+activate Print
+Print -> StudentManager : Get Iter
+deactivate Print
+loop Student Count
+    StudentManager -> StudentManager : Print Student Data
+end
+
+else PrintSorted Input
+StudentManager -> PrintSorted : Request Sorted Data
+activate PrintSorted
+PrintSorted -> StudentManager : Get Sorted Data
+deactivate PrintSorted
+loop Student Count
+    StudentManager -> StudentManager : Print Sorted Student
+end
+
+else Save Input
+StudentManager -> Save : Save
+activate Save
+Save -> StudentManager : Save Complate
+deactivate Save
+
+else Load Input
+StudentManager -> Load : Load
+activate Load
+Load -> StudentManager : Load Complate
+deactivate Load
+
+else Exit Input
+StudentManager -> Main : Exit()
+deactivate StudentManager
+
+end
+
+@enduml

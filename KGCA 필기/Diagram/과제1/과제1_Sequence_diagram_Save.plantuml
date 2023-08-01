@@ -1,0 +1,26 @@
+@startuml a
+title Student Manager Save
+
+actor User
+activate StudentManager
+
+User -> StudentManager : Input
+
+StudentManager -> FileManager : Save
+
+activate FileManager
+FileManager -> FileManager : Read File
+alt File Exist
+    FileManager -> FileManager : Create Student Data Buffer
+    loop Buffer Size
+        FileManager -> FileManager : Set Buffer
+    end
+    FileManager -> FileManager : Write File
+    FileManager -> FileManager : Delete Buffer
+else File Not Exist
+    FileManager -> FileManager : Print Error
+    FileManager -> StudentManager
+    deactivate FileManager
+end
+
+@enduml
