@@ -4,10 +4,10 @@
 #define EPSILON (0.000001f)
 //#define RadianToDegree(radian) (radian*(180.0lf/ M_PI))
 //#define DegreeToRadian(degree) (degree *(M_PI/180.0lf))
-auto RadianToDegree = [](float radian) {
+static auto RadianToDegree = [](float radian) {
 	return float(radian * (180.0f / M_PI));
 };
-auto DegreeToRadian = [](float degree) {
+static auto DegreeToRadian = [](float degree) {
 	return float(degree * (M_PI / 180.0f));
 };
 
@@ -124,7 +124,7 @@ public:
 		z=z * value;
 	};
 	inline Vector3 operator / (float value) {
-		if (value <= 0.0f)_ASSERT("ZERO DIVISION");
+		_ASSERT(value > 0.0f);
 		Vector3 cpVector;
 		cpVector.x = x / value;
 		cpVector.y = y / value;
@@ -132,7 +132,7 @@ public:
 		return cpVector;
 	};
 	inline void operator /= (float value) {
-		if (value <= 0.0f)_ASSERT("ZERO DIVISION");
+		_ASSERT(value > 0.0f);
 		x = x / value;
 		y = y / value;
 		z = z / value;
