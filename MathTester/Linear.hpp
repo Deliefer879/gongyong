@@ -38,12 +38,12 @@ public:
 	float GetDirection() { return direction; };
 public:
 	Plane() {};
-	Plane(Vector3& pos, Vector3& direct) {
+	Plane(Vector3 pos, Vector3 direct) {
 		normalVector = direct.NormalizeVector();
 		position = pos;
 		direction = -(normalVector | position);
 	};
-	Plane(Vector3& pos1, Vector3& pos2, Vector3& pos3) {
+	Plane(Vector3 pos1, Vector3 pos2, Vector3 pos3) {
 		position = pos1; //기준점
 		Vector3 edge1 = pos2 - position;   //기준점 방향으로 삼각형이 나와야함.
 		Vector3 edge2 = pos3 - position;
