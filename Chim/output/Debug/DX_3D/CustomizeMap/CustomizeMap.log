@@ -1,0 +1,18 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(498,5): warning MSB8004: Intermediate 디렉터리가 슬래시로 끝나지 않습니다. Intermediate 디렉터리의 적절한 평가를 허용하는 데 필요하므로 이 빌드 인스턴스에서 슬래시를 추가합니다.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(499,5): warning MSB8004: Output 디렉터리가 슬래시로 끝나지 않습니다. Output 디렉터리의 적절한 평가를 허용하는 데 필요하므로 이 빌드 인스턴스에서 슬래시를 추가합니다.
+  Sample.cpp
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+D:\GitRepo\ChiTa_GongYong\Chim\새 폴더\CustomizeMap\Sample.cpp(22,34): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+DirectXTex.lib(BC.obj) : warning LNK4099: 'DirectXTex.pdb' PDB를 'DirectXTex.lib(BC.obj)' 또는 'D:\GitRepo\ChiTa_GongYong\Chim\output\Debug\DX_3D\DirectXTex.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+DirectXTex.lib(BC4BC5.obj) : warning LNK4099: 'DirectXTex.pdb' PDB를 'DirectXTex.lib(BC4BC5.obj)' 또는 'D:\GitRepo\ChiTa_GongYong\Chim\output\Debug\DX_3D\DirectXTex.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+DirectXTex.lib(BC6HBC7.obj) : warning LNK4099: 'DirectXTex.pdb' PDB를 'DirectXTex.lib(BC6HBC7.obj)' 또는 'D:\GitRepo\ChiTa_GongYong\Chim\output\Debug\DX_3D\DirectXTex.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+DirectXTex.lib(DirectXTexCompress.obj) : warning LNK4099: 'DirectXTex.pdb' PDB를 'DirectXTex.lib(DirectXTexCompress.obj)' 또는 'D:\GitRepo\ChiTa_GongYong\Chim\output\Debug\DX_3D\DirectXTex.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+DirectXTex.lib(DirectXTexConvert.obj) : warning LNK4099: '' PDB를 'DirectXTex.lib(DirectXTexConvert.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+DirectXTex.lib(DirectXTexD3D11.obj) : warning LNK4099: 'DirectXTex.pdb' PDB를 'DirectXTex.lib(DirectXTexD3D11.obj)' 또는 'D:\GitRepo\ChiTa_GongYong\Chim\output\Debug\DX_3D\DirectXTex.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+DirectXTex.lib(DirectXTexDDS.obj) : warning LNK4099: 'DirectXTex.pdb' PDB를 'DirectXTex.lib(DirectXTexDDS.obj)' 또는 'D:\GitRepo\ChiTa_GongYong\Chim\output\Debug\DX_3D\DirectXTex.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+DirectXTex.lib(DirectXTexImage.obj) : warning LNK4099: 'DirectXTex.pdb' PDB를 'DirectXTex.lib(DirectXTexImage.obj)' 또는 'D:\GitRepo\ChiTa_GongYong\Chim\output\Debug\DX_3D\DirectXTex.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+DirectXTex.lib(DirectXTexMipMaps.obj) : warning LNK4099: 'DirectXTex.pdb' PDB를 'DirectXTex.lib(DirectXTexMipMaps.obj)' 또는 'D:\GitRepo\ChiTa_GongYong\Chim\output\Debug\DX_3D\DirectXTex.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+DirectXTex.lib(DirectXTexTGA.obj) : warning LNK4099: 'DirectXTex.pdb' PDB를 'DirectXTex.lib(DirectXTexTGA.obj)' 또는 'D:\GitRepo\ChiTa_GongYong\Chim\output\Debug\DX_3D\DirectXTex.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+DirectXTex.lib(DirectXTexUtil.obj) : warning LNK4099: 'DirectXTex.pdb' PDB를 'DirectXTex.lib(DirectXTexUtil.obj)' 또는 'D:\GitRepo\ChiTa_GongYong\Chim\output\Debug\DX_3D\DirectXTex.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+DirectXTex.lib(DirectXTexWIC.obj) : warning LNK4099: 'DirectXTex.pdb' PDB를 'DirectXTex.lib(DirectXTexWIC.obj)' 또는 'D:\GitRepo\ChiTa_GongYong\Chim\output\Debug\DX_3D\DirectXTex.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+  CustomizeMap.vcxproj -> D:\GitRepo\ChiTa_GongYong\Chim\output\Debug\DX_3D\CustomizeMap.exe

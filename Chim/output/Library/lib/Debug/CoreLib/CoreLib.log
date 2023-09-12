@@ -1,0 +1,98 @@
+﻿  Animator.cpp
+D:\GitRepo\ChiTa_GongYong\Chim\새 폴더\CoreLib\Animator.cpp(45,52): warning C4244: '+=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Camera.cpp
+  CameraManger.cpp
+  Circle.cpp
+  Collision.cpp
+D:\GitRepo\ChiTa_GongYong\Chim\새 폴더\CoreLib\Collision.cpp(8,66): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\GitRepo\ChiTa_GongYong\Chim\새 폴더\CoreLib\Collision.cpp(9,67): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\GitRepo\ChiTa_GongYong\Chim\새 폴더\CoreLib\Collision.cpp(18,60): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\GitRepo\ChiTa_GongYong\Chim\새 폴더\CoreLib\Collision.cpp(19,60): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\GitRepo\ChiTa_GongYong\Chim\새 폴더\CoreLib\Collision.cpp(48,39): warning C4244: '+=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Core.cpp
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+  DXRenderer.cpp
+D:\GitRepo\ChiTa_GongYong\Chim\새 폴더\CoreLib\DXRenderer.cpp(37,54): warning C4267: '=': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\GitRepo\ChiTa_GongYong\Chim\새 폴더\CoreLib\DXRenderer.cpp(73,51): warning C4267: '=': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\GitRepo\ChiTa_GongYong\Chim\새 폴더\CoreLib\DXRenderer.cpp(172,47): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  FSM.cpp
+  FSMManager.cpp
+  Graphics.cpp
+D:\GitRepo\ChiTa_GongYong\Chim\새 폴더\CoreLib\Graphics.cpp(5,25): warning C4244: '=': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\GitRepo\ChiTa_GongYong\Chim\새 폴더\CoreLib\Graphics.cpp(6,25): warning C4244: '=': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\GitRepo\ChiTa_GongYong\Chim\새 폴더\CoreLib\Graphics.cpp(7,22): warning C4244: '=': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\GitRepo\ChiTa_GongYong\Chim\새 폴더\CoreLib\Graphics.cpp(8,23): warning C4244: '=': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\GitRepo\ChiTa_GongYong\Chim\새 폴더\CoreLib\Graphics.cpp(9,25): warning C4244: '=': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\GitRepo\ChiTa_GongYong\Chim\새 폴더\CoreLib\Graphics.cpp(10,25): warning C4244: '=': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\GitRepo\ChiTa_GongYong\Chim\새 폴더\CoreLib\Graphics.cpp(163,46): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\GitRepo\ChiTa_GongYong\Chim\새 폴더\CoreLib\Graphics.cpp(163,40): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Matrix.cpp
+  Object.cpp
+  ObjectManager.cpp
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+  ObjectState.cpp
+  Rect.cpp
+  Scene.cpp
+  SceneManager.cpp
+  ShaderManager.cpp
+  TextureManager.cpp
+  Timer.cpp
+  코드를 생성하고 있습니다...
+  컴파일하고 있습니다...
+  UserInput.cpp
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+  Vector2.cpp
+D:\GitRepo\ChiTa_GongYong\Chim\새 폴더\CoreLib\Vector2.cpp(124,13): warning C4244: 'return': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Vector3.cpp
+D:\GitRepo\ChiTa_GongYong\Chim\새 폴더\CoreLib\Vector3.cpp(131,13): warning C4244: 'return': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Vector4.cpp
+D:\GitRepo\ChiTa_GongYong\Chim\새 폴더\CoreLib\Vector4.cpp(150,16): warning C4244: 'return': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Window.cpp
+D:\GitRepo\ChiTa_GongYong\Chim\새 폴더\CoreLib\Window.cpp(42,43): warning C4244: '=': 'DWORD'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\GitRepo\ChiTa_GongYong\Chim\새 폴더\CoreLib\Window.cpp(42,41): warning C4244: '=': 'float'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\GitRepo\ChiTa_GongYong\Chim\새 폴더\CoreLib\Window.cpp(43,43): warning C4244: '=': 'DWORD'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\GitRepo\ChiTa_GongYong\Chim\새 폴더\CoreLib\Window.cpp(43,41): warning C4244: '=': 'float'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\GitRepo\ChiTa_GongYong\Chim\새 폴더\CoreLib\Window.cpp(52,19): warning C4838: 'DWORD'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
+D:\GitRepo\ChiTa_GongYong\Chim\새 폴더\CoreLib\Window.cpp(52,34): warning C4838: 'DWORD'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
+  Writer.cpp
+D:\GitRepo\ChiTa_GongYong\Chim\새 폴더\CoreLib\Writer.cpp(40,12): warning C4244: '초기화 중': 'UINT'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\GitRepo\ChiTa_GongYong\Chim\새 폴더\CoreLib\Writer.cpp(117,3): warning C4267: '인수': 'size_t'에서 'UINT32'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  코드를 생성하고 있습니다...
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(1545,5): warning MSB8012: TargetPath(D:\GitRepo\ChiTa_GongYong\Chim\output\Library\lib\Debug\CoreLib.lib)이(가) Library의 OutputFile 속성 값(D:\GitRepo\ChiTa_GongYong\Chim\새 폴더\CoreLib\CoreLib.lib)과 일치하지 않습니다. 이로 인해 프로젝트가 잘못 빌드될 수 있습니다. 이를 수정하려면 $(OutDir), $(TargetName) 및 $(TargetExt) 속성 값이 %(Lib.OutputFile)에 지정된 값과 일치해야 합니다.
+  CoreLib.vcxproj -> D:\GitRepo\ChiTa_GongYong\Chim\output\Library\lib\Debug\CoreLib.lib
+  하위 디렉터리 또는 파일 ..\\..\\Library\\CoreLib\\include이(가) 이미 있습니다.
+  Animator.h
+  하위 디렉터리 또는 파일 ..\\..\\Library\\CoreLib\\lib이(가) 이미 있습니다.
+  Basic_Math.h
+  Camera.h
+  CameraManger.h
+  Collision.h
+  Constant.h
+  Core.h
+  DirectXTex.h
+  DXRenderer.h
+  FSM.h
+  FSMManager.h
+  Graphics.h
+  Object.h
+  ObjectManager.h
+  ObjectState.h
+  Scene.h
+  SceneManager.h
+  ShaderManager.h
+  Std.h
+  TextureManager.h
+  Timer.h
+  UserInput.h
+  Utils.h
+  Window.h
+  Writer.h
+         25개 파일이 복사되었습니다.
+  FiniteState.hpp
+  ResourceManager.hpp
+  Singleton.hpp
+          3개 파일이 복사되었습니다.
+  DirectXTex.inl
+          1개 파일이 복사되었습니다.
+  CoreLib.lib
+          1개 파일이 복사되었습니다.
