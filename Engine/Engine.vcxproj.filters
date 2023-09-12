@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Utility">
+      <UniqueIdentifier>{34f184aa-d903-4036-92af-64b9fec33b0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UObject">
+      <UniqueIdentifier>{baedc915-5910-4f00-8175-bdf7734c7f8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UObject\Component">
+      <UniqueIdentifier>{22f323cb-7b3e-44ef-8bba-6b5ebbf96fbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UObject\Actor">
+      <UniqueIdentifier>{dd2187a5-021d-4212-9dce-3f99cf2b529b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CoreSystem">
+      <UniqueIdentifier>{96cb2d30-2d53-4967-a00b-00c6c0e1c5e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CoreSystem\PCH">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="ResourceManagers">
+      <UniqueIdentifier>{4a5018db-a714-4b56-8dff-20a89e68869d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ObjectManagers">
+      <UniqueIdentifier>{cf397c73-8511-4330-b63f-3353349719dc}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h">
+      <Filter>CoreSystem\PCH</Filter>
+    </ClInclude>
+    <ClInclude Include="Global.h">
+      <Filter>CoreSystem\PCH</Filter>
+    </ClInclude>
+    <ClInclude Include="D3D11Renderer.h">
+      <Filter>CoreSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Core.h">
+      <Filter>CoreSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="GameWindow.h">
+      <Filter>CoreSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Geometry.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="UActorComponent.h">
+      <Filter>UObject\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>CoreSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioManager.h">
+      <Filter>ResourceManagers</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderManager.h">
+      <Filter>ResourceManagers</Filter>
+    </ClInclude>
+    <ClInclude Include="TextManager.h">
+      <Filter>ResourceManagers</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureManager.h">
+      <Filter>ResourceManagers</Filter>
+    </ClInclude>
+    <ClInclude Include="InputHandler.h">
+      <Filter>CoreSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="AActor.h">
+      <Filter>UObject\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="ActorManager.h">
+      <Filter>ObjectManagers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp">
+      <Filter>CoreSystem\PCH</Filter>
+    </ClCompile>
+    <ClCompile Include="Core.cpp">
+      <Filter>CoreSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="D3D11Renderer.cpp">
+      <Filter>CoreSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="GameWindow.cpp">
+      <Filter>CoreSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Geometry.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="UActorComponent.cpp">
+      <Filter>UObject\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>CoreSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="AudioManager.cpp">
+      <Filter>ResourceManagers</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderManager.cpp">
+      <Filter>ResourceManagers</Filter>
+    </ClCompile>
+    <ClCompile Include="TextManager.cpp">
+      <Filter>ResourceManagers</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureManager.cpp">
+      <Filter>ResourceManagers</Filter>
+    </ClCompile>
+    <ClCompile Include="InputHandler.cpp">
+      <Filter>CoreSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="AActor.cpp">
+      <Filter>UObject\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="ActorManager.cpp">
+      <Filter>ObjectManagers</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

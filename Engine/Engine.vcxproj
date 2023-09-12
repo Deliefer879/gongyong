@@ -21,36 +21,36 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{453b1e26-6cd5-4b7d-8dec-ce2a527f83d2}</ProjectGuid>
-    <RootNamespace>Timer</RootNamespace>
+    <ProjectGuid>{1e7d96c0-5114-44f8-80b3-b5e93b3c5e42}</ProjectGuid>
+    <RootNamespace>Engine</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -78,21 +78,24 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>../../output</OutDir>
-    <IntDir>../../output/timer</IntDir>
+    <IncludePath>$(SolutionDir)_EXTERNAL\FMOD\inc;$(SolutionDir)_EXTERNAL\DirectXTex;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)_EXTERNAL\FMOD\lib\x64;$(SolutionDir)_EXTERNAL\DirectXTex\$(Configuration);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(SolutionDir)_EXTERNAL\FMOD\inc;$(SolutionDir)_EXTERNAL\DirectXTex;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)_EXTERNAL\FMOD\lib\x64;$(SolutionDir)_EXTERNAL\DirectXTex\$(Configuration);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>
+      </SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
@@ -102,11 +105,12 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>
+      </SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -116,13 +120,34 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>
+      </SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent>
+      <Command>copy "$(SolutionDir)_EXTERNAL\DirectXTex\*.inl" "$(SolutionDir)_EXTERNAL\Engine\"
+copy "$(SolutionDir)_EXTERNAL\DirectXTex\*.h" "$(SolutionDir)_EXTERNAL\Engine\"
+copy "$(SolutionDir)_EXTERNAL\FMOD\inc\*.h" "$(SolutionDir)_EXTERNAL\Engine\"
+copy "$(SolutionDir)_EXTERNAL\FMOD\inc\*.hpp" "$(SolutionDir)_EXTERNAL\Engine\"
+copy "*.h" "$(SolutionDir)_EXTERNAL\Engine\"
+copy "$(SolutionDir)$(IntDir)Engine.lib" "$(SolutionDir)_EXTERNAL\Engine\"
+copy "$(SolutionDir)_EXTERNAL\FMOD\lib\x64\fmod_vc.lib" "$(SolutionDir)_EXTERNAL\Engine\"
+copy "$(SolutionDir)_EXTERNAL\DirectXTex\Debug\DirectXTex.lib" "$(SolutionDir)_EXTERNAL\Engine\"
+copy "$(SolutionDir)_EXTERNAL\FMOD\lib\x64\fmod.dll" "$(SolutionDir)$(IntDir)"
+copy "$(SolutionDir)_EXTERNAL\FMOD\lib\x64\fmod.dll" "$(SolutionDir)_EXTERNAL\Engine\"</Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>if exist "$(SolutionDir)_EXTERNAL\Engine" rmdir /s /q "$(SolutionDir)_EXTERNAL\Engine"
+mkdir "$(SolutionDir)_EXTERNAL\Engine"</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -130,22 +155,75 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>
+      </SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent>
+      <Command>copy "$(SolutionDir)_EXTERNAL\DirectXTex\*.inl" "$(SolutionDir)_EXTERNAL\Engine\"
+copy "$(SolutionDir)_EXTERNAL\DirectXTex\*.h" "$(SolutionDir)_EXTERNAL\Engine\"
+copy "$(SolutionDir)_EXTERNAL\FMOD\inc\*.h" "$(SolutionDir)_EXTERNAL\Engine\"
+copy "$(SolutionDir)_EXTERNAL\FMOD\inc\*.hpp" "$(SolutionDir)_EXTERNAL\Engine\"
+copy "*.h" "$(SolutionDir)_EXTERNAL\Engine\"
+copy "$(SolutionDir)$(IntDir)Engine.lib" "$(SolutionDir)_EXTERNAL\Engine\"
+copy "$(SolutionDir)_EXTERNAL\FMOD\lib\x64\fmod_vc.lib" "$(SolutionDir)_EXTERNAL\Engine\"
+copy "$(SolutionDir)_EXTERNAL\DirectXTex\Release\DirectXTex.lib" "$(SolutionDir)_EXTERNAL\Engine\"
+copy "$(SolutionDir)_EXTERNAL\FMOD\lib\x64\fmod.dll" "$(SolutionDir)$(IntDir)"
+copy "$(SolutionDir)_EXTERNAL\FMOD\lib\x64\fmod.dll" "$(SolutionDir)_EXTERNAL\Engine\"</Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>if exist "$(SolutionDir)_EXTERNAL\Engine" rmdir /s /q "$(SolutionDir)_EXTERNAL\Engine"
+mkdir "$(SolutionDir)_EXTERNAL\Engine"</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="MTimer.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClInclude Include="ActorManager.h" />
+    <ClInclude Include="Global.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="Core.h" />
+    <ClInclude Include="D3D11Renderer.h" />
+    <ClInclude Include="InputHandler.h" />
+    <ClInclude Include="TextManager.h" />
+    <ClInclude Include="AActor.h" />
+    <ClInclude Include="ShaderManager.h" />
+    <ClInclude Include="AudioManager.h" />
+    <ClInclude Include="TextureManager.h" />
+    <ClInclude Include="Timer.h" />
+    <ClInclude Include="Geometry.h" />
+    <ClInclude Include="UActorComponent.h" />
+    <ClInclude Include="GameWindow.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MTimer.h" />
+    <ClCompile Include="ActorManager.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Core.cpp" />
+    <ClCompile Include="D3D11Renderer.cpp" />
+    <ClCompile Include="InputHandler.cpp" />
+    <ClCompile Include="TextManager.cpp" />
+    <ClCompile Include="AActor.cpp" />
+    <ClCompile Include="ShaderManager.cpp" />
+    <ClCompile Include="AudioManager.cpp" />
+    <ClCompile Include="TextureManager.cpp" />
+    <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="Geometry.cpp" />
+    <ClCompile Include="UActorComponent.cpp" />
+    <ClCompile Include="GameWindow.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
