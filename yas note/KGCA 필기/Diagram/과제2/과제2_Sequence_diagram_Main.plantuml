@@ -1,0 +1,65 @@
+@startuml a
+title Octree Sequence Diagram Main
+
+skinparam SequenceMessageAlignment center
+
+note left of Main
+    Init Octree, Timer
+end note
+
+activate Main
+
+Main -> Timer : Init()
+Main -> Timer : Init()
+activate Timer
+Timer -> Main : Init Timer Done
+deactivate Timer
+
+Main -> Octree : Init()
+activate Octree
+Octree -> Main : Init Octree Done
+deactivate Octree
+
+note left of Main
+    Loop until MAX_GAME_TIME
+end note
+
+loop GameTime < MAX_GAME_TIME
+    Main -> Timer : Frame()
+    activate Timer
+    Timer -> Main : 
+    deactivate Timer
+
+    Main -> Octree : PreFrame()
+    activate Octree
+    Octree -> Main :
+    deactivate Octree
+
+    Main -> Octree : Frame()
+    activate Octree
+    Octree -> Main : 
+    deactivate Octree
+
+    Main -> Octree : Render()
+    activate Octree
+    Octree -> Main : 
+    deactivate Octree
+
+    Main -> Timer : Render()
+    activate Timer
+    Timer -> Main : 
+    deactivate Timer
+end 
+
+Main -> Octree : Release()
+activate Octree
+Octree -> Main : Release Octree Done
+deactivate Octree
+
+Main -> Timer : Release()
+activate Timer
+Timer -> Main : Release Timer Done
+deactivate Timer
+
+
+@enduml

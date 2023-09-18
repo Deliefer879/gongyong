@@ -1,4 +1,6 @@
 # STL
+ZeroMemory() : 메모리를 0으로 초기화  
+STL 컨테이너가 포함된 객체 초기화 시 절대로 사용하면 안됨(iter도  초기화!)
 
 * ## vector
   * Queue를 동적 배열 구조를 구현한 구조
@@ -149,17 +151,76 @@
     </br></br>
 
 * ## Map
-  * 검색에 최적화된 자료구조로 BST를 사용해 구현되어 있음
-  * 자료의 순서가 중요하지 않고(push back을 해도 순서대로 저장이 안됨)
-  * 자료의 키와 값이 쌍(pair)으로 저장되어 있음
-  * 
+  * ### Common
+    * 자료의 순서가 중요하지 않고(push back을 해도 순서대로 저장이 안됨)
+    * 자료의 키와 값이 쌍(pair)으로 저장되어 있음
+  * ### Map
+    * 검색에 최적화된 자료구조로 BST를 사용해 구현되어 있음
+  * ### UnOrdered_Map
+    * hash table을 사용해 구현되어 있는 Map
+
+```cpp
+
+    // map has same function with unordered_map
+    // so you can change map to unordered_map
+    using MyMap = std::map<int, std::string>;
+
+    MyMap mapList1;
+    std::pair<int, std::string> pairdata;
+
+    pairdata.first = 10;
+    pairdata.second = "value 10";
+    mapList1.insert(pairdata);
+
+    mapList1[20] = "value 20";      // this is not good way
+    mapList1[20] = "value 20_2";    // it will be changed
+
+    mapList1.insert(std::make_pair(23, "강3시"));
+    mapList1.insert(std::make_pair(23, "강5시")); // it will not be changed
+
+    MyMap::iterator d1 = mapList1.find(9); // find return iterator
+    
+    // loop use copy value
+    for (std::pair<int, std::string> d2 : mapList1) 
+    {
+        int key = d2.first;
+        std::string value = d2.second;
+    }
+
+    // loop use ref value
+    for (auto& d7 : mapList1)
+    {
+        int key = d7.first;
+        std::string value = d7.second;
+    }
+
+    // loop use iterator
+    for (MyMap::iterator d3 = mapList1.begin(); d3 != mapList1.end(); d3++)
+    {
+        int key = d3->first;
+        std::string value = d3->second;
+    }
+
+    // index access
+    for (int iKey = 0; iKey < mapList1.size(); iKey++)
+    {
+        std::cout << mapList1[iKey].c_str();
+    }
+    
+
+
+```
 </br></br>
 
-* ## UnOrdered_Map
-  * hash table을 사용해 구현되어 있는 Map
+* ## Pair, Tuple
+  * ### Pair
+    * 두 개의 자료를 하나의 쌍으로 묶어 관리하는 자료구조
+    * pair 객체를 만들 때는 make_pair() 함수를 사용
+    * pair 객체의 멤버 변수 first, second를 사용하여 접근
+  * ### Tuple
+    * 여러 개의 자료를 하나의 쌍으로 묶어 관리하는 자료구조
 </br></br>
 
-* ## Hash
-  * Hash Table : 키를 값에 대응시키는 구조인 Hash Map을 구현한 자료구조
-
-
+* ## Priority Queue
+  * 자료를 삽입한 순서가 아니라 우선순위에 따라 자료가 배치되는 자료구조
+  * 우선순위 큐는 Heap을 구현하는 것이 일반적

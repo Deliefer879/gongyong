@@ -536,6 +536,21 @@
 디자인 패턴 : if_else를 없애는 것이 목적, 다형성(상속, virtual)을 이용해서 if_else를 없앤다.
 
 국지화 : 변경 가능성 있는 코드는 한곳으로 모아 관리가 편하게 한다
+</br></br>
+
+* ## Smart Pointer
+  * std::unique_ptr< T >  
+    * 하나의 객체만 참조할 수 있는 포인터 (소유권)  
+    * unique_ptr은 소유권을 이전할 수 있지만 복사할 수는 없다.(대입 불가능)
+    * 만약 get()을 통해 raw pointer을 얻어온다면 소유권이 이전되지 않는다.  
+    (삭제또한 가능하기에 위험하다!)
+
+  * std::shared_ptr< T > 
+    * 여러 개의 객체가 참조할 수 있는 포인터(참조 레퍼런싱 가능)
+    * 참조 count를 통해 생명 주기를 관리함(thread safe)
+    * 단 참조 count가 살아있는한 해제가 되지 않기에 memory leak이 발생할 수 있다.
+
+  * std::weak_ptr< T > : std::shared_ptr< T >를 참조할 수 있는 포인터
 
 
 

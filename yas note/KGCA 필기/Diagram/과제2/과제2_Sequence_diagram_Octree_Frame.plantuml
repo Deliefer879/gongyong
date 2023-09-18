@@ -1,0 +1,24 @@
+@startuml a
+title Octree Sequence Diagram Frame
+
+skinparam SequenceMessageAlignment center
+
+Main -> Octree : Frame()
+activate Octree
+
+loop Each Dynamic Object Node
+
+    loop to root node
+        Octree -> Octree : Create Vector<Object*> for Collision Check
+    end
+
+    loop Each Collision Check Vector  
+        alt Collision
+            Octree -> Octree : Delete Object
+    end 
+end
+
+Octree -> Main : Frame() Done
+deactivate Octree
+
+@enduml

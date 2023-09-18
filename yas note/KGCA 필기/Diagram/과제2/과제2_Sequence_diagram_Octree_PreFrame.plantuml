@@ -1,0 +1,24 @@
+@startuml a
+title Octree Sequence Diagram PreFrame
+
+skinparam SequenceMessageAlignment center
+
+Main -> Octree: PreFrame()
+activate Octree
+
+loop Each Dynamic Object Node List
+    Octree -> Node : Clear dynamic object list
+end
+
+Octree -> Octree : Clear Dynamic Object Node List
+
+loop Each Dynamic Object
+    Octree -> Node : Move Dynamic Object
+    Octree -> Octree : Add Dynamic Object to Octree
+end
+
+Octree -> Main : PreFrame() Done
+deactivate Octree
+
+@enduml
+

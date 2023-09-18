@@ -1,0 +1,24 @@
+@startuml a
+title Octree Sequence Diagram Build
+
+skinparam SequenceMessageAlignment center
+
+Main -> Octree: Init()
+activate Octree
+
+Octree -> Octree: Set Root Node
+
+loop until depth is 2
+    note right of Octree 
+        DivideNode() is Divid Node to 8 child node
+        by  Cartesian coordinate
+    end note
+
+    Octree -> Octree: DivideNode(Node* parent)
+end
+
+
+Octree -> Main : Init() Done
+deactivate Octree
+
+@enduml

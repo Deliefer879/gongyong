@@ -1,0 +1,17 @@
+@startuml a
+title Octree Sequence Diagram Render
+
+skinparam SequenceMessageAlignment center
+
+Main -> Octree : Render()
+activate Octree
+
+loop until node is null
+    Octree -> Octree : LevelOrder(Node* node)
+end
+
+Octree -> Main : Render() Done
+deactivate Octree
+
+@enduml
+
