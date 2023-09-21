@@ -172,3 +172,23 @@
     * Z-buffer를 생성 시 backbuffer의 크기와 같은 크기를 생성해야 하는데 이때 backbuffer가 아닌 swapchain의 데이터를 이용해 생성해도 된다.
     * Z-buffer를 생성한 뒤 ID3d11DepthStaencilState를 이용하여 Z-buffer를 사용할 수 있다.  
     DepthSteancilState는 여러개를 생성할 수 있으며 이를 이용해 각 객체에 Depth buffering을 적용할 수도 적용하지 않을수도 있다.
+
+
+  * ## FBX
+    * fbx 파일은 FBXSDK Lib를 이용해 읽을 수 있다.
+      1) fbx sdk download
+      2) FBX SDK 폴더 생성 후 inc, lib 복사
+      3) TFbxImport 클래스 생성 및 환경 설정
+         * fbx dll이 시스템에 있다면 dll을 실행 파일과 같은 폴더에 없어도 된다.
+      4) Fbx는 manager를 통해 메모리를 할당하고 이를 통해 scene을 생성한다.  
+      그래서 smart pointer를 사용할 필요가 없다.
+    * PreProcess : 일반적으로 3D 파일은 트리구조(scene graph)로 구성되어 있으며  
+    이 트리를 순회하면 fbx파일에 포함된 모든 정보를 얻을 수 있다.
+    * 파일의 노드는 각각 다른 정보를 지니고 있으며 필요한 정보에 따라 노드에서 정보를 얻은 뒤 사용하면 된다.
+    * fbx는 기존에 사용하던 dx math가 fbx math를 사용한다.
+    * polygon은 face가 2개인 경우와 face가 1개인 경우가 있다.
+      그래서 polygon이 몇개의 face로 구성되어 있는지 알아야 한다.
+    * fbx는 max 좌표계를 사용하기 때문에 z,y가 바뀌어 있으며 texture정보도 바뀌어 있다.
+    그래서 값을 dx에서 사용가능 하도록 바꿔주어야 한다.
+        
+    1권 p.774 ~ end 
